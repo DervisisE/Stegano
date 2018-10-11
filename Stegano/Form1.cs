@@ -24,24 +24,27 @@ namespace Stegano
 
         private void button1_Click(object sender, EventArgs e)
         {
+            /* 
             String imageLocation = "";
             try
             {
-                OpenFileDialog dialog = new OpenFileDialog();
-                dialog.Filter = "jpg files(*.jpg)|*.jpg| PNG files(*.png)|*.png| All Files(*.*)|*.*";
 
-                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                OpenFileDialog ofile = new OpenFileDialog();
+                ofile.Filter = "jpg files(*.jpg)|*.jpg| PNG files(*.png)|*.png| All Files(*.*)|*.*";
+
+                if (ofile.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    imageLocation = dialog.FileName;
-                    pictureBox1.ImageLocation = imageLocation;
+                    imageLocation = ofile.FileName;
+                    coverImage.Image = new Bitmap(imageLocation);
                 }
-
             }
             catch (Exception)
             {
                 MessageBox.Show("An Error Occured", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
+
             }
+            */ 
+
         }
     }
 }
