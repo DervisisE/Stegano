@@ -77,6 +77,7 @@
             this.stegoImage.Location = new System.Drawing.Point(13, 394);
             this.stegoImage.Name = "stegoImage";
             this.stegoImage.Size = new System.Drawing.Size(500, 300);
+            this.stegoImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.stegoImage.TabIndex = 3;
             this.stegoImage.TabStop = false;
             // 
@@ -88,6 +89,7 @@
             this.btnUploadSecretImage.TabIndex = 4;
             this.btnUploadSecretImage.Text = "Upload Secret Image";
             this.btnUploadSecretImage.UseVisualStyleBackColor = true;
+            this.btnUploadSecretImage.Click += new System.EventHandler(this.btnUploadSecretImage_Click);
             // 
             // btnCreateStegoImage
             // 
@@ -97,12 +99,14 @@
             this.btnCreateStegoImage.TabIndex = 5;
             this.btnCreateStegoImage.Text = "Create Stego Image";
             this.btnCreateStegoImage.UseVisualStyleBackColor = true;
+            this.btnCreateStegoImage.Click += new System.EventHandler(this.btnCreateStegoImage_Click);
             // 
             // extractedSecretImage
             // 
             this.extractedSecretImage.Location = new System.Drawing.Point(973, 394);
             this.extractedSecretImage.Name = "extractedSecretImage";
             this.extractedSecretImage.Size = new System.Drawing.Size(500, 300);
+            this.extractedSecretImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.extractedSecretImage.TabIndex = 6;
             this.extractedSecretImage.TabStop = false;
             // 
