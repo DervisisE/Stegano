@@ -118,6 +118,7 @@
             this.btnExtractSecretImage.TabIndex = 7;
             this.btnExtractSecretImage.Text = "Extract Secret Image";
             this.btnExtractSecretImage.UseVisualStyleBackColor = true;
+            this.btnExtractSecretImage.Click += new System.EventHandler(this.btnExtractSecretImage_Click);
             // 
             // btnUploadStegoImage
             // 

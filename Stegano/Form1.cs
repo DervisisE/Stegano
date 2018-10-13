@@ -74,7 +74,13 @@ namespace Stegano
 
         private void btnCreateStegoImage_Click(object sender, EventArgs e)
         {
-            stegoImage.Image = Transform((Bitmap)coverImage.Image);
+            //TRY CATCH
+            stegoImage.Image = Transform((Bitmap)coverImage.Image, (Bitmap)secretImage.Image);
+        }
+
+        private void btnExtractSecretImage_Click(object sender, EventArgs e)
+        {
+            extractedSecretImage.Image = Extract((Bitmap)stegoImage.Image);
         }
     }
 }
