@@ -17,7 +17,7 @@ namespace Stegano
         {
             int wc = cImg.Width;
             int hc = cImg.Height;
-            Bitmap stego = cImg;
+            Bitmap stImg = cImg;
             for (int i = 0; i < wc; i++)
             {
                 for (int j = 0; j < hc; j++)
@@ -36,12 +36,12 @@ namespace Stegano
                     gc = (byte)(gc | gs);
                     bc = (byte)(bc | bs);
 
-                    stego.SetPixel(i, j, Color.FromArgb(rc, gc, bc)); 
+                    stImg.SetPixel(i, j, Color.FromArgb(rc, gc, bc)); 
 
                 }
             }
 
-            return stego;
+            return stImg;
         }
         public static Bitmap Extract(Bitmap sImg)
         {
