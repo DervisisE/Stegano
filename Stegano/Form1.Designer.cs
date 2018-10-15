@@ -31,17 +31,18 @@
             this.coverImage = new System.Windows.Forms.PictureBox();
             this.secretImage = new System.Windows.Forms.PictureBox();
             this.btnUploadCoverImg = new System.Windows.Forms.Button();
-            this.stegoImage = new System.Windows.Forms.PictureBox();
             this.btnUploadSecretImage = new System.Windows.Forms.Button();
             this.btnCreateStegoImage = new System.Windows.Forms.Button();
             this.extractedSecretImage = new System.Windows.Forms.PictureBox();
             this.btnExtractSecretImage = new System.Windows.Forms.Button();
             this.btnUploadStegoImage = new System.Windows.Forms.Button();
             this.btnSaveExtractedImage = new System.Windows.Forms.Button();
+            this.btnSaveStegoImage = new System.Windows.Forms.Button();
+            this.stegoImage = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.coverImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.secretImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stegoImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.extractedSecretImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stegoImage)).BeginInit();
             this.SuspendLayout();
             // 
             // coverImage
@@ -70,16 +71,7 @@
             this.btnUploadCoverImg.TabIndex = 2;
             this.btnUploadCoverImg.Text = "Upload Cover Image";
             this.btnUploadCoverImg.UseVisualStyleBackColor = true;
-            this.btnUploadCoverImg.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // stegoImage
-            // 
-            this.stegoImage.Location = new System.Drawing.Point(13, 394);
-            this.stegoImage.Name = "stegoImage";
-            this.stegoImage.Size = new System.Drawing.Size(500, 300);
-            this.stegoImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.stegoImage.TabIndex = 3;
-            this.stegoImage.TabStop = false;
+            this.btnUploadCoverImg.Click += new System.EventHandler(this.btnUploadCoverImg_Click);
             // 
             // btnUploadSecretImage
             // 
@@ -93,7 +85,7 @@
             // 
             // btnCreateStegoImage
             // 
-            this.btnCreateStegoImage.Location = new System.Drawing.Point(363, 700);
+            this.btnCreateStegoImage.Location = new System.Drawing.Point(12, 362);
             this.btnCreateStegoImage.Name = "btnCreateStegoImage";
             this.btnCreateStegoImage.Size = new System.Drawing.Size(149, 26);
             this.btnCreateStegoImage.TabIndex = 5;
@@ -128,6 +120,7 @@
             this.btnUploadStegoImage.TabIndex = 8;
             this.btnUploadStegoImage.Text = "Upload Stego Image";
             this.btnUploadStegoImage.UseVisualStyleBackColor = true;
+            this.btnUploadStegoImage.Click += new System.EventHandler(this.btnUploadStegoImage_Click);
             // 
             // btnSaveExtractedImage
             // 
@@ -137,19 +130,40 @@
             this.btnSaveExtractedImage.TabIndex = 9;
             this.btnSaveExtractedImage.Text = "Save Extracted Image";
             this.btnSaveExtractedImage.UseVisualStyleBackColor = true;
+            this.btnSaveExtractedImage.Click += new System.EventHandler(this.btnSaveExtractedImage_Click);
+            // 
+            // btnSaveStegoImage
+            // 
+            this.btnSaveStegoImage.Location = new System.Drawing.Point(363, 700);
+            this.btnSaveStegoImage.Name = "btnSaveStegoImage";
+            this.btnSaveStegoImage.Size = new System.Drawing.Size(149, 26);
+            this.btnSaveStegoImage.TabIndex = 10;
+            this.btnSaveStegoImage.Text = "Save Stego Image";
+            this.btnSaveStegoImage.UseVisualStyleBackColor = true;
+            this.btnSaveStegoImage.Click += new System.EventHandler(this.btnSaveStegoImage_Click);
+            // 
+            // stegoImage
+            // 
+            this.stegoImage.Location = new System.Drawing.Point(12, 394);
+            this.stegoImage.Name = "stegoImage";
+            this.stegoImage.Size = new System.Drawing.Size(500, 300);
+            this.stegoImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.stegoImage.TabIndex = 11;
+            this.stegoImage.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1485, 756);
+            this.Controls.Add(this.stegoImage);
+            this.Controls.Add(this.btnSaveStegoImage);
             this.Controls.Add(this.btnSaveExtractedImage);
             this.Controls.Add(this.btnUploadStegoImage);
             this.Controls.Add(this.btnExtractSecretImage);
             this.Controls.Add(this.extractedSecretImage);
             this.Controls.Add(this.btnCreateStegoImage);
             this.Controls.Add(this.btnUploadSecretImage);
-            this.Controls.Add(this.stegoImage);
             this.Controls.Add(this.btnUploadCoverImg);
             this.Controls.Add(this.secretImage);
             this.Controls.Add(this.coverImage);
@@ -157,8 +171,8 @@
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.coverImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.secretImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stegoImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.extractedSecretImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stegoImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -168,13 +182,14 @@
         private System.Windows.Forms.PictureBox coverImage;
         private System.Windows.Forms.PictureBox secretImage;
         private System.Windows.Forms.Button btnUploadCoverImg;
-        private System.Windows.Forms.PictureBox stegoImage;
         private System.Windows.Forms.Button btnUploadSecretImage;
         private System.Windows.Forms.Button btnCreateStegoImage;
         private System.Windows.Forms.PictureBox extractedSecretImage;
         private System.Windows.Forms.Button btnExtractSecretImage;
         private System.Windows.Forms.Button btnUploadStegoImage;
         private System.Windows.Forms.Button btnSaveExtractedImage;
+        private System.Windows.Forms.Button btnSaveStegoImage;
+        private System.Windows.Forms.PictureBox stegoImage;
     }
 }
 

@@ -17,7 +17,21 @@ namespace Stegano
         {
             int wc = cImg.Width;
             int hc = cImg.Height;
-            Bitmap stego = cImg;
+            Bitmap stImg = cImg;
+            /*int ws = sImg.Width;
+            int hs = sImg.Height;
+            float ratioS = (float)ws / hs;
+            int cNumP = wc * hc;
+            int sNumP = ws * hs;
+            float ratioStoC = (float)cNumP / (2 * sNumP);
+            float cCapBit = 6 * cNumP-24;
+            float sNumBit = sNumP * 12;
+            float nws = ws * (cCapBit / sNumBit);
+            float nhs = hs * (cCapBit / sNumBit);
+
+            Bitmap b = new Bitmap(cImg, new Size((int)nws, (int)nhs));
+            */
+
             for (int i = 0; i < wc; i++)
             {
                 for (int j = 0; j < hc; j++)
@@ -36,12 +50,13 @@ namespace Stegano
                     gc = (byte)(gc | gs);
                     bc = (byte)(bc | bs);
 
-                    stego.SetPixel(i, j, Color.FromArgb(rc, gc, bc)); 
+                    stImg.SetPixel(i, j, Color.FromArgb(rc, gc, bc));
 
                 }
             }
-
-            return stego;
+            //Bitmap b = new Bitmap(stImg, new Size(100, 100));
+            return stImg;
+            
         }
         public static Bitmap Extract(Bitmap sImg)
         {
