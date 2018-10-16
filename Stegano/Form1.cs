@@ -35,7 +35,7 @@ namespace Stegano
             try
             {
                 OpenFileDialog coverImageFile = new OpenFileDialog();
-                coverImageFile.Filter = "PNG files(*.png)|*.png| jpg files(*.jpg)|*.jpg| All Files(*.*)|*.*";
+                coverImageFile.Filter = "PNG files(*.png)|*.png|All Files(*.*)|*.* | jpg files(*.jpg)|*.jpg";
 
                 if (coverImageFile.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
@@ -55,7 +55,7 @@ namespace Stegano
             try
             {
                 OpenFileDialog ofile = new OpenFileDialog();
-                ofile.Filter = "PNG files(*.png)|*.png| jpg files(*.jpg)|*.jpg| All Files(*.*)|*.*";
+                ofile.Filter = "PNG files(*.png)|*.png|All Files(*.*)|*.* | jpg files(*.jpg)|*.jpg";
 
                 if (ofile.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
@@ -79,7 +79,7 @@ namespace Stegano
 
         private void btnExtractSecretImage_Click(object sender, EventArgs e)
         {
-            extracted = Extract((Bitmap)stegoImage.Image);
+            extracted = Extract(stego);
             extractedSecretImage.Image = extracted;
         }
 
