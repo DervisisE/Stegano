@@ -39,6 +39,13 @@
             this.btnSaveExtractedImage = new System.Windows.Forms.Button();
             this.btnSaveStegoImage = new System.Windows.Forms.Button();
             this.stegoImage = new System.Windows.Forms.PictureBox();
+            this.CoverTb = new System.Windows.Forms.TextBox();
+            this.SecretTb = new System.Windows.Forms.TextBox();
+            this.CreateStegoTb = new System.Windows.Forms.TextBox();
+            this.StegoTb = new System.Windows.Forms.TextBox();
+            this.SaveStegoTb = new System.Windows.Forms.TextBox();
+            this.EtractSecretTb = new System.Windows.Forms.TextBox();
+            this.SaveEtractedTb = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.coverImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.secretImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.extractedSecretImage)).BeginInit();
@@ -167,12 +174,106 @@
             this.stegoImage.TabIndex = 11;
             this.stegoImage.TabStop = false;
             // 
+            // CoverTb
+            // 
+            this.CoverTb.BackColor = System.Drawing.Color.DimGray;
+            this.CoverTb.Location = new System.Drawing.Point(12, 274);
+            this.CoverTb.Multiline = true;
+            this.CoverTb.Name = "CoverTb";
+            this.CoverTb.ReadOnly = true;
+            this.CoverTb.Size = new System.Drawing.Size(243, 38);
+            this.CoverTb.TabIndex = 12;
+            this.CoverTb.Text = "Select an image to be used as a cover image, in which the secret image will be hi" +
+    "dden iside.\r\n";
+            this.CoverTb.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // SecretTb
+            // 
+            this.SecretTb.BackColor = System.Drawing.Color.DimGray;
+            this.SecretTb.Location = new System.Drawing.Point(973, 274);
+            this.SecretTb.Multiline = true;
+            this.SecretTb.Name = "SecretTb";
+            this.SecretTb.ReadOnly = true;
+            this.SecretTb.Size = new System.Drawing.Size(243, 38);
+            this.SecretTb.TabIndex = 13;
+            this.SecretTb.Text = "Select an image to be hidden inside the cover image.";
+            this.SecretTb.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // CreateStegoTb
+            // 
+            this.CreateStegoTb.BackColor = System.Drawing.Color.DimGray;
+            this.CreateStegoTb.Location = new System.Drawing.Point(12, 394);
+            this.CreateStegoTb.Multiline = true;
+            this.CreateStegoTb.Name = "CreateStegoTb";
+            this.CreateStegoTb.ReadOnly = true;
+            this.CreateStegoTb.Size = new System.Drawing.Size(243, 48);
+            this.CreateStegoTb.TabIndex = 14;
+            this.CreateStegoTb.Text = "Press this button to create the Stegano Image by hidding the secret image into th" +
+    "e cover image. This may take a while.\r\n\r\n";
+            this.CreateStegoTb.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // StegoTb
+            // 
+            this.StegoTb.BackColor = System.Drawing.Color.DimGray;
+            this.StegoTb.Location = new System.Drawing.Point(12, 646);
+            this.StegoTb.Multiline = true;
+            this.StegoTb.Name = "StegoTb";
+            this.StegoTb.ReadOnly = true;
+            this.StegoTb.Size = new System.Drawing.Size(243, 48);
+            this.StegoTb.TabIndex = 15;
+            this.StegoTb.Text = "Select an Stegano image that will be used to reveal the Secret image inside of it" +
+    ". Only Stegano Images will work.";
+            this.StegoTb.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // SaveStegoTb
+            // 
+            this.SaveStegoTb.BackColor = System.Drawing.Color.DimGray;
+            this.SaveStegoTb.Location = new System.Drawing.Point(409, 658);
+            this.SaveStegoTb.Multiline = true;
+            this.SaveStegoTb.Name = "SaveStegoTb";
+            this.SaveStegoTb.ReadOnly = true;
+            this.SaveStegoTb.Size = new System.Drawing.Size(103, 36);
+            this.SaveStegoTb.TabIndex = 16;
+            this.SaveStegoTb.Text = "Save the created Stegano image.";
+            this.SaveStegoTb.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // EtractSecretTb
+            // 
+            this.EtractSecretTb.BackColor = System.Drawing.Color.DimGray;
+            this.EtractSecretTb.Location = new System.Drawing.Point(973, 658);
+            this.EtractSecretTb.Multiline = true;
+            this.EtractSecretTb.Name = "EtractSecretTb";
+            this.EtractSecretTb.ReadOnly = true;
+            this.EtractSecretTb.Size = new System.Drawing.Size(206, 36);
+            this.EtractSecretTb.TabIndex = 17;
+            this.EtractSecretTb.Text = "Press this button to Extract the Secret image hidden within the Stegano Image.";
+            this.EtractSecretTb.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // SaveEtractedTb
+            // 
+            this.SaveEtractedTb.BackColor = System.Drawing.Color.DimGray;
+            this.SaveEtractedTb.Location = new System.Drawing.Point(1324, 658);
+            this.SaveEtractedTb.Multiline = true;
+            this.SaveEtractedTb.Name = "SaveEtractedTb";
+            this.SaveEtractedTb.ReadOnly = true;
+            this.SaveEtractedTb.Size = new System.Drawing.Size(149, 36);
+            this.SaveEtractedTb.TabIndex = 18;
+            this.SaveEtractedTb.Text = "Save the Secret Image tha was extracted.";
+            this.SaveEtractedTb.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1485, 756);
+            this.Controls.Add(this.SaveEtractedTb);
+            this.Controls.Add(this.EtractSecretTb);
+            this.Controls.Add(this.SaveStegoTb);
+            this.Controls.Add(this.StegoTb);
+            this.Controls.Add(this.CreateStegoTb);
+            this.Controls.Add(this.SecretTb);
+            this.Controls.Add(this.CoverTb);
             this.Controls.Add(this.stegoImage);
             this.Controls.Add(this.btnSaveStegoImage);
             this.Controls.Add(this.btnSaveExtractedImage);
@@ -191,6 +292,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.extractedSecretImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stegoImage)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -207,6 +309,13 @@
         private System.Windows.Forms.Button btnSaveExtractedImage;
         private System.Windows.Forms.Button btnSaveStegoImage;
         private System.Windows.Forms.PictureBox stegoImage;
+        private System.Windows.Forms.TextBox CoverTb;
+        private System.Windows.Forms.TextBox SecretTb;
+        private System.Windows.Forms.TextBox CreateStegoTb;
+        private System.Windows.Forms.TextBox StegoTb;
+        private System.Windows.Forms.TextBox SaveStegoTb;
+        private System.Windows.Forms.TextBox EtractSecretTb;
+        private System.Windows.Forms.TextBox SaveEtractedTb;
     }
 }
 

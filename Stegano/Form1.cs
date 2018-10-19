@@ -43,6 +43,7 @@ namespace Stegano
                     cover = new Bitmap(coverImageLocation);
                     coverImage.Image = cover;
                     btnUploadSecretImage.Enabled = true;
+                    CoverTb.SendToBack();
                 }
             }
             catch (Exception)
@@ -64,6 +65,7 @@ namespace Stegano
                     secret = new Bitmap(secretImageLocation);
                     secretImage.Image = secret;
                     btnCreateStegoImage.Enabled = true;
+                    SecretTb.SendToBack();
                 }
             }
             catch (Exception)
@@ -80,6 +82,9 @@ namespace Stegano
                 stegoImage.Image = stego;
                 btnExtractSecretImage.Enabled = true;
                 btnSaveStegoImage.Enabled = true;
+                CreateStegoTb.SendToBack();
+                StegoTb.SendToBack();
+                SaveStegoTb.SendToBack();
             }
             catch (Exception)
             {
@@ -94,6 +99,8 @@ namespace Stegano
                 extracted = Extract(stego);
                 extractedSecretImage.Image = extracted;
                 btnSaveExtractedImage.Enabled = true;
+                EtractSecretTb.SendToBack();
+                SaveEtractedTb.SendToBack();
             }
             catch (Exception)
             {
@@ -136,6 +143,9 @@ namespace Stegano
                     stego = new Bitmap(stegoImageLocation);
                     stegoImage.Image = stego;
                     btnExtractSecretImage.Enabled = true;
+                    CreateStegoTb.SendToBack();
+                    StegoTb.SendToBack();
+                    SaveStegoTb.SendToBack();
                 }
             }
             catch (Exception)
