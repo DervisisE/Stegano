@@ -35,13 +35,14 @@ namespace Stegano
             try
             {
                 OpenFileDialog coverImageFile = new OpenFileDialog();
-                coverImageFile.Filter = "PNG files(*.png)|*.png|All Files(*.*)|*.* | jpg files(*.jpg)|*.jpg";
+                coverImageFile.Filter = "PNG files(*.png)|*.png|Jpg files(*.jpg)|*.jpg| All Files(*.*)|*.*";
 
                 if (coverImageFile.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     coverImageLocation = coverImageFile.FileName;
                     cover = new Bitmap(coverImageLocation);
                     coverImage.Image = cover;
+                    btnUploadSecretImage.Enabled = true;
                 }
             }
             catch (Exception)
@@ -55,13 +56,14 @@ namespace Stegano
             try
             {
                 OpenFileDialog ofile = new OpenFileDialog();
-                ofile.Filter = "PNG files(*.png)|*.png|All Files(*.*)|*.* | jpg files(*.jpg)|*.jpg";
+                ofile.Filter = "PNG files(*.png)|*.png|Jpg files(*.jpg)|*.jpg| All Files(*.*)|*.*";
 
                 if (ofile.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     secretImageLocation = ofile.FileName;
                     secret = new Bitmap(secretImageLocation);
                     secretImage.Image = secret;
+                    btnCreateStegoImage.Enabled = true;
                 }
             }
             catch (Exception)
@@ -72,15 +74,31 @@ namespace Stegano
 
         private void btnCreateStegoImage_Click(object sender, EventArgs e)
         {
-            //TRY CATCH
-            stego = Transform((Bitmap)coverImage.Image, (Bitmap)secretImage.Image);
-            stegoImage.Image = stego;
+            try
+            {
+                stego = Transform((Bitmap)coverImage.Image, (Bitmap)secretImage.Image);
+                stegoImage.Image = stego;
+                btnExtractSecretImage.Enabled = true;
+                btnSaveStegoImage.Enabled = true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("An Error Occured", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnExtractSecretImage_Click(object sender, EventArgs e)
         {
-            extracted = Extract(stego);
-            extractedSecretImage.Image = extracted;
+            try
+            {
+                extracted = Extract(stego);
+                extractedSecretImage.Image = extracted;
+                btnSaveExtractedImage.Enabled = true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("An Error Occured", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnSaveStegoImage_Click(object sender, EventArgs e)
@@ -88,7 +106,7 @@ namespace Stegano
             try
             {
                 SaveFileDialog save = new SaveFileDialog();
-                save.Filter = "PNG files(*.png)|*.png| jpg files(*.jpg)|*.jpg| All Files(*.*)|*.*";
+                save.Filter = "PNG files(*.png)|*.png|Jpg files(*.jpg)|*.jpg| All Files(*.*)|*.*";
 
                 if (save.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
@@ -110,13 +128,14 @@ namespace Stegano
             try
             {
                 OpenFileDialog ofile = new OpenFileDialog();
-                ofile.Filter = "PNG files(*.png)|*.png| jpg files(*.jpg)|*.jpg| All Files(*.*)|*.*";
+                ofile.Filter = "PNG files(*.png)|*.png|Jpg files(*.jpg)|*.jpg| All Files(*.*)|*.*";
 
                 if (ofile.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     stegoImageLocation = ofile.FileName;
                     stego = new Bitmap(stegoImageLocation);
                     stegoImage.Image = stego;
+                    btnExtractSecretImage.Enabled = true;
                 }
             }
             catch (Exception)
@@ -130,7 +149,7 @@ namespace Stegano
             try
             {
                 SaveFileDialog save = new SaveFileDialog();
-                save.Filter = "PNG files(*.png)|*.png| jpg files(*.jpg)|*.jpg| All Files(*.*)|*.*";
+                save.Filter = "PNG files(*.png)|*.png|Jpg files(*.jpg)|*.jpg| All Files(*.*)|*.*";
 
                 if (save.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
